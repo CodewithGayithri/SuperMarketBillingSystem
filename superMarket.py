@@ -22,6 +22,18 @@ items = {"Rice":50,
 option=int(input("for list of items press 1:"))
 if(option==1):
     print(lists)
+for i in range(len(items)):
+    inp = int(input("If You Want to Buy Press 1 OR To Exit Press 2"))
+    if inp == 2:
+        break
+    if inp == 1:
+        item = input("Enter Item Name: ")
+        quantity = int(input("Enter The Quantity: "))
+        if item in items.keys():
+            price = quantity * (items[item])
+print(price)
+
+
     
 
     
