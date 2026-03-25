@@ -63,15 +63,15 @@ if inp1 == 'yes':
         print("sno",8*" ",'items',8*" ","Quantity",3*" "
                   ,"Price",)
         for i in range(len(pricelist)):
-            print(i,10*" ",ilist[i],12*" ",
+            print(i+1,10*" ",ilist[i],12*" ",
                       qlist[i],8*" ",plist[i])
-            print(75*"-")
-            print(45*" ","TotalAmount: ","Rs",totalprice)
-            print(45*" ","GSTAmount: ","Rs",gst)
-            print(75*"-")
-            print(50*" ","FinalAmount: ","Rs",finalAmount)
-            print(75*"-")
-            print("Thank You")
+        print(75*"-")
+        print(42*" ","TotalAmount: ","Rs",totalprice)
+        print(42*" ","GSTAmount: ","Rs",gst)
+        print(75*"-")
+        print(42*" ","FinalAmount: ","Rs",finalAmount)
+        print(75*"-")
+        print(30*" ","Thank You")
     
 
 
