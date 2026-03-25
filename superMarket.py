@@ -34,8 +34,6 @@ while(True):
     option=int(input("1. List ofItems\n2. Buy Items\n3. Exit\nChoose The Option: "))
     if(option==1):
         print(lists)
-    elif option == 3:
-        break
     elif option == 2:
          item = input("Enter Item Name: ")
          quantity = int(input("Enter The Quantity: "))
@@ -50,28 +48,35 @@ while(True):
             finalAmount = gst + totalprice
          else:
             print("Sorry Item is Not Available")
+    elif option==3:
+         while(True):
+             inp1 = input("Doy Want Bill yes OR no: ")
+             if inp1 == 'yes':
+                if finalAmount!=0:
+                    print(25*"=","Super Market",25*"=")
+                    print(28*" ","Banglore")
+                    print("Name:",name,30*" ","Date: ",datetime.now())
+                    print(75*"-")
+                    print("sno",8*" ",'items',8*" ","Quantity",3*" "
+                         ,"Price",3*" ","TotalPrice",)
+                    for i in range(len(pricelist)):
+                       print(i+1,10*" ",ilist[i],12*" ",
+                          qlist[i],8*" ",pricelist[i][2],8*" ",plist[i])
+                    print(75*"-")
+                    print(42*" ","TotalAmount: ","Rs",totalprice)
+                    print(42*" ","GSTAmount: ","Rs",gst)
+                    print(75*"-")
+                    print(42*" ","FinalAmount: ","Rs",finalAmount)
+                    print(75*"-")
+                    print(30*" ","Thank You")
+                break
+             elif inp1=='no':
+                 print("You Can Continue Shopping: ")
+                 break
+              
     else:
           print("Please Choose Valid Option!")
-inp1 = input("Doy Want Bill yes OR no: ")
-if inp1 == 'yes':
-    pass
-    if finalAmount!=0:
-        print(25*"=","Super Market",25*"=")
-        print(28*" ","Banglore")
-        print("Name:",name,30*" ","Date: ",datetime.now())
-        print(75*"-")
-        print("sno",8*" ",'items',8*" ","Quantity",3*" "
-                  ,"Price",)
-        for i in range(len(pricelist)):
-            print(i+1,10*" ",ilist[i],12*" ",
-                      qlist[i],8*" ",plist[i])
-        print(75*"-")
-        print(42*" ","TotalAmount: ","Rs",totalprice)
-        print(42*" ","GSTAmount: ","Rs",gst)
-        print(75*"-")
-        print(42*" ","FinalAmount: ","Rs",finalAmount)
-        print(75*"-")
-        print(30*" ","Thank You")
+
     
 
 
