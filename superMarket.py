@@ -2,9 +2,13 @@ from datetime import datetime
 name = input("Enter The Name: ")
 
 lists='''
-Rice Rs 50/Kg
-Maggie 15
-Sugar Rs 42/Kg
+Rice   Rs 50/kg
+Maggie Rs 15
+Sugar  Rs 42/kg
+Atta   Rs 30/kg
+Coffee Rs 10
+Chilli Rs 15/Kg
+Onion  Rs 50/kg
 '''
 
 #Declaration
@@ -16,45 +20,50 @@ ilist=[]
 iprice = []
 qlist = []
 plist = []
+finalAmount=0
 
 items = {"Rice":50,
 "Maggie": 15,
-"Sugar":42}
-option=int(input("for list of items press 1:"))
-if(option==1):
-    print(lists)
-for i in range(len(items)):
-    inp = int(input("If You Want to Buy Press 1 OR To Exit Press 2"))
-    if inp == 2:
+"Sugar":42,
+"Atta":30,
+"Coffee":10,
+"Chilli":15,
+"Onion":50}
+
+while(True):
+    option=int(input("1. List ofItems\n2. Buy Items\n3. Exit\nChoose The Option: "))
+    if(option==1):
+        print(lists)
+    elif option == 3:
         break
-    if inp == 1:
-        item = input("Enter Item Name: ")
-        quantity = int(input("Enter The Quantity: "))
-        if item in items.keys():
+    elif option == 2:
+         item = input("Enter Item Name: ")
+         quantity = int(input("Enter The Quantity: "))
+         if item in items.keys():
             price = quantity * (items[item])
-            pricelist.append((item,quantity,items,price))
+            pricelist.append((item,quantity,items[item],price))
             totalprice += price
             ilist.append(item)
             qlist.append(quantity)
             plist.append(price)
             gst = (totalprice*5)/100
             finalAmount = gst + totalprice
-        else:
+         else:
             print("Sorry Item is Not Available")
     else:
-        print("You Entered Wrong Number")
-    inp1 = input("Doy Want Bill yes OR no")
-    if inp1 == 'yes':
-        pass
-        if finalAmount!=0:
-            print(25*"=","Super Market",25*"=")
-            print(28*" ","Banglore")
-            print("Name:",name,30*" ","Date: ",datetime.now())
-            print(75*"-")
-            print("sno",8*" ",'items',8*" ","Quantity",3*" "
+          print("Please Choose Valid Option!")
+inp1 = input("Doy Want Bill yes OR no: ")
+if inp1 == 'yes':
+    pass
+    if finalAmount!=0:
+        print(25*"=","Super Market",25*"=")
+        print(28*" ","Banglore")
+        print("Name:",name,30*" ","Date: ",datetime.now())
+        print(75*"-")
+        print("sno",8*" ",'items',8*" ","Quantity",3*" "
                   ,"Price",)
-            for i in range(len(pricelist)):
-                print(i,10*" ",ilist[i],12*" ",
+        for i in range(len(pricelist)):
+            print(i,10*" ",ilist[i],12*" ",
                       qlist[i],8*" ",plist[i])
             print(75*"-")
             print(45*" ","TotalAmount: ","Rs",totalprice)
