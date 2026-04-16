@@ -3,7 +3,7 @@ name = input("Enter The Name: ")
 
 lists='''
 Rice   Rs 50/kg
-Maggie Rs 15
+Maggie Rs 15 
 Sugar  Rs 42/kg
 Atta   Rs 30/kg
 Coffee Rs 10
